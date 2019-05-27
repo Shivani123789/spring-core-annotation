@@ -1,6 +1,7 @@
 package com.stackroute.Config;
 
 import com.stackroute.Config.AppConfig;
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,13 @@ public class SpringBeanConfiguration {
     {
         Actor actor=new Actor("sid","male",30);
         return actor;
+    }
+
+    @Bean(name = "BeanLifecycleDemoBean.class")
+            public BeanLifecycleDemoBean getMessage()
+    {
+        BeanLifecycleDemoBean beanLifecycleDemoBean=new BeanLifecycleDemoBean();
+        return beanLifecycleDemoBean;
     }
 //    @Bean(name = "Movie1.class")
 //    public Movie getName1()
