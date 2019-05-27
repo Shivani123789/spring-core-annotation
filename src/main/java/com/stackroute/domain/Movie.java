@@ -16,42 +16,41 @@ public class Movie {
     }
 
 
-//    public Movie(Actor actor, int id, String name) {
-//        this.actor = actor;
-//        this.id = id;
-//        this.name = name;
-//    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    public Movie(Actor actor, int id, String name) {
+        this.actor = actor;
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 
-    public Actor getActor() {
-        return actor;
-    }
-
-    public void setActor(Actor actor) {
-        this.actor = actor;
-    }
-
-//    @Override
-//    public String toString() {
-//        return "Movie{" +
-//                "actor=" + actor +
-//                ", id=" + id +
-//                ", name='" + name + '\'' +
-//                '}';
+//    public int getId() {
+//        return id;
 //    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public Actor getActor() {
+//        return actor;
+//    }
+//
+//    public void setActor(Actor actor) {
+//        this.actor = actor;
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "actor=" + actor +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
