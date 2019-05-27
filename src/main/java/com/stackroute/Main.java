@@ -13,12 +13,9 @@ public class Main {
 
         Movie movie = (Movie) ctx.getBean("Movie.class");
         System.out.println("all movie details here " + movie.toString());
-        Movie movie4 = (Movie) ctx.getBean("Movie2.class");
-        System.out.println("all movie details here " + movie4.toString());
+//        Movie movie4 = (Movie) ctx.getBean("Movie2.class");
+//        System.out.println("all movie details here " + movie4.toString());
 // check singleten ,scope
-        Movie movie1 = (Movie) ctx.getBean("Movie.class");
-        Movie movie2 = (Movie) ctx.getBean("Movie.class");
-        System.out.println(movie1==movie2);
 //        Movie movie3 = (Movie) context1.getBean("movie");
 //        Movie movie3 = (Movie) context1.getBean("movie");
         //using getter and setter method

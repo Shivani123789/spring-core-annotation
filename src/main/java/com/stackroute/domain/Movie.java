@@ -1,27 +1,39 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+//@Component
 public class Movie {
-
     public Movie() {
     }
+    @Autowired
     private Actor actor;
     private int id;
     private String name;
-// create constuctor to use constructor method
-
-
     public Movie(Actor actor) {
-        System.out.println(actor);
         this.actor = actor;
     }
 
-
-    public Movie(Actor actor, int id, String name) {
-        this.actor = actor;
+    public Movie(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "actor=" + actor +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+    // removed constuctor to use @autowired on setter
+//    @Autowired
+//    public Movie(Actor actor) {
+//        System.out.println(actor);
+//        this.actor = actor;
+//    }
+//
 //    public int getId() {
 //        return id;
 //    }
@@ -44,13 +56,6 @@ public class Movie {
 //
 //    public void setActor(Actor actor) {
 //        this.actor = actor;
-
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "actor=" + actor +
-                ", id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
+//
+//    }
 }

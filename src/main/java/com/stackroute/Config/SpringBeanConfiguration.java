@@ -3,6 +3,7 @@ package com.stackroute.Config;
 import com.stackroute.Config.AppConfig;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,27 +11,26 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class SpringBeanConfiguration {
-    @Bean(name = {"Movie.class","Movie2.class"})
-    @Scope("prototype")
+    @Bean(name = "Movie.class")
     public Movie getName()
     {
-        Actor actor=new Actor("sid","male",25);
-        Movie object=new Movie(actor,2,"yes boss");
-        return object;
-    }
-//    public Movie getName()
-//    {
-//        Actor actor=new Actor();
+        Movie movie=new Movie(2,"yes boss");
+//        Actor actor = new Actor();
 //        actor.setActorname("sid");
 //        actor.setAge(34);
 //        actor.setGender("M");
-//        Movie object=new Movie();
+//        Movie object=new Movie(actor);
 //        object.setName("kalank");
 //        object.setId(32);
-//        object.setActor(actor);
-//        return object;
-//
-//    }
+//       // object.setActor(actor);
+        return movie;
+    }
+    @Bean(name = "Actor.class")
+    public Actor getActorName()
+    {
+        Actor actor=new Actor("sid","male",30);
+        return actor;
+    }
 //    @Bean(name = "Movie1.class")
 //    public Movie getName1()
 //    {

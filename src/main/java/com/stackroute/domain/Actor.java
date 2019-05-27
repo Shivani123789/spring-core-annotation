@@ -1,5 +1,7 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Actor {
     public Actor() {
     }
@@ -40,7 +42,6 @@ public class Actor {
 //    public int getAge() {
 //        return age;
 //    }
-//
 //    public void setAge(int age) {
 //        this.age = age;
 //    }
