@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class SpringBeanConfiguration {
-    @Bean(name = "Movie.class")
+    @Bean(name = {"Movie.class","Movie2.class"})
     @Scope("prototype")
     public Movie getName()
     {
