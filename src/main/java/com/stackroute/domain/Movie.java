@@ -1,9 +1,15 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 @Component
-public class Movie {
+public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
     public Movie() {
     }
     @Autowired
@@ -26,6 +32,24 @@ public class Movie {
                 ", id=" + id +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        System.out.println("beanFactory " +beanFactory);
+    }
+
+    @Override
+    public void setBeanName(String s) {
+        System.out.println(s);
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println(applicationContext);
+        System.out.println(applicationContext.getBean("Actor.class"));
+        System.out.println(applicationContext.getBean("Movie.class"));
+
     }
     // removed constuctor to use @autowired on setter
 //    @Autowired
